@@ -2,26 +2,26 @@ import java.util.*;
 
 public class ShoppingCart {
 
-    private List<Product> products = new ArrayList<>();
+    private List<LineItem> lineItems = new ArrayList<>();
 
-    public void addProduct(Product product) {
-        products.add(product);
+    public void addLineItem(LineItem lineItem) {
+        lineItems.add(lineItem);
     }
 
     public int getTotalCost() {
-        return products.stream().mapToInt(Product::getPrice).sum();
+        return lineItems.stream().mapToInt(LineItem::getPrice).sum();
     }
 
     public void listItems() {
-        products.forEach((n) -> System.out.println(n.getName()));
+        lineItems.forEach((lineItem) -> System.out.println(lineItem.getProduct().getName()));
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("The Cart Contains:\n");
-        products.forEach((product) -> sb.append(product.getName() + "\n"));
-
+        lineItems.forEach(
+                (lineItem) -> sb.append(lineItem.getProduct().getName() + " x " + lineItem.getQuantity() + "\n"));
         return sb.toString();
     }
 

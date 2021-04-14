@@ -7,6 +7,10 @@ public class Customer {
         this.creditCard = new CreditCard(ccNumber);
     }
 
+    public int calculateDiscount() {
+        return 0;
+    }
+
     public Order checkout(ShoppingCart cart) {
         Payment payment = creditCard.mkPayment(cart.getTotalCost());
 
