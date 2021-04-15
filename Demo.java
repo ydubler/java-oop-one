@@ -20,5 +20,10 @@ public class Demo {
 
         System.out.println(cart);
         System.out.println(cart.getTotalCost());
+
+        Customer cust = new Customer("John", 550L);
+        System.out.println(cust.calculateDiscount());
+        cust = new BusinessCustomer("James", 551L, BusinessSize.SMALL);
+        System.out.println(cust.calculateDiscount());
     }
 }

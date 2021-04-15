@@ -7,6 +7,7 @@ public class Customer {
         this.creditCard = new CreditCard(ccNumber);
     }
 
+    // This method varies so subclasses are used to handle this variance
     public int calculateDiscount() {
         return 0;
     }
